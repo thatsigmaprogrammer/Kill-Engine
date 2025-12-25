@@ -1,0 +1,8 @@
+.vs/
+.git/
+.vscode/
+packages.config
+x64/
+packages/
+bin/core/render/render.o
+bin/core/render/Makefile
