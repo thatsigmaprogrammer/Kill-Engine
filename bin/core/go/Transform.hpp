@@ -6,3 +6,4 @@ struct Transform
     float rotation = 0.f;
     sf::Vector2f scale {1.f, 1.f};
 };
+
