@@ -6,9 +6,6 @@
 #include <map>
 #include <vector>
 #include <string>
-#include <optional>
-
-class KillFrame;
 
 namespace KE {
     namespace Core {
