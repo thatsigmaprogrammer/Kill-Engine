@@ -7,6 +7,7 @@ bool TexturePack::load(const std::string& path, const std::string& name) {
     }
 
     textures.emplace(name, std::move(tex));
+    list.push_back(name);
     return true;
 }
 

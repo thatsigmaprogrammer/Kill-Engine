@@ -7,6 +7,7 @@
 class TexturePack {
 public:
     bool load(const std::string& path, const std::string& name);
+    TexturePack() = default;
     sf::Texture* get(const std::string& name);
     bool has(const std::string name) const;
     std::vector<std::string> getList() const;

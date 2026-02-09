@@ -1,9 +1,12 @@
 #include "render.hpp"
+#include "../input/Input.hpp"
 
 
-int KE::Core::Render::renderMain(const std::string& gamename) {
-    sf::RenderWindow window(sf::VideoMode(800,600), gamename);
+int KE::Core::Render::renderMain(const std::string& gamename, std::function<void()> func) {
+    window.create(sf::VideoMode(800,600), gamename);
     if (loaded.empty()) return 1;
+
+    Input::Mouse.window = &window;
 
     while (window.isOpen()) {
         sf::Event ev;
@@ -14,6 +17,8 @@ int KE::Core::Render::renderMain(const std::string& gamename) {
         }
 
         window.clear();
+
+        func();
 
         for (const auto& sprite : loaded) {
             window.draw(sprite);
@@ -40,9 +45,10 @@ std::vector<sf::Sprite> KE::Core::Render::getSprites() {
     return loaded;
 }
 
-KillFrame KE::Core::Render::createKframe(std::string name, unsigned int spri)
+KillFrame& KE::Core::Render::createKframe(const std::string name, unsigned int spri)
 {
-    KillFrame frame(spri);
+    auto [it, inserted] = kframes.try_emplace(name, KillFrame(spri));
+    KillFrame& frame = it->second;
 
     if (spri >= 0 && static_cast<size_t>(spri) < loaded.size()) {
         frame.setSpri(spri);

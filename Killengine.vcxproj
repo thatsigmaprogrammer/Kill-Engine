@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="packages\SFML-cpp.2.5.1\build\native\SFML-cpp.props" Condition="Exists('packages\SFML-cpp.2.5.1\build\native\SFML-cpp.props')" />
   <Import Project="packages\SFML-cpp.redist.2.5.1.1\build\native\SFML-cpp.redist.props" Condition="Exists('packages\SFML-cpp.redist.2.5.1.1\build\native\SFML-cpp.redist.props')" />
@@ -38,7 +38,7 @@
     <PlatformToolset>v145</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v145</PlatformToolset>
   </PropertyGroup>
@@ -70,6 +70,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <TargetExt>.exe</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>true</LinkIncremental>
@@ -96,7 +97,7 @@
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>Console</SubSystem>
     </Link>
     <PostBuildEvent>
       <Command />
@@ -128,12 +129,17 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="bin\core\go\KillFrame.cpp" />
+    <ClCompile Include="bin\core\input\Input.cpp" />
+    <ClCompile Include="bin\core\KillMain.cpp" />
     <ClCompile Include="bin\core\render\render.cpp" />
     <ClCompile Include="bin\core\textures\TexturePack.cpp" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="bin\core\go\KillFrame.hpp" />
     <ClInclude Include="bin\core\go\Transform.hpp" />
+    <ClInclude Include="bin\core\input\Input.hpp" />
+    <ClInclude Include="bin\core\KillMain.hpp" />
     <ClInclude Include="bin\core\render\render.hpp" />
     <ClInclude Include="bin\core\textures\TexturePack.hpp" />
   </ItemGroup>

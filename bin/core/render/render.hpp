@@ -6,21 +6,25 @@
 #include <map>
 #include <vector>
 #include <string>
+#include <functional>
 
 namespace KE {
     namespace Core {
         class Render
         {
         public:
-            int renderMain(const std::string& gamename);
+
+            sf::RenderWindow window;
+            std::map<std::string, KillFrame> kframes;
+
+            int renderMain(const std::string& gamename, std::function<void()> usercode);
             void loadTexturePack(TexturePack& pack);
             std::vector<sf::Sprite> getSprites();
             static Render& get() { static Render ins; return ins; }
-            KillFrame createKframe(std::string name, unsigned int spri);
+            KillFrame& createKframe(const std::string name, unsigned int spri);
             void setSpritePos(unsigned int spri, float x, float y);
         private:
             std::vector<sf::Sprite> loaded;
-            std::map<std::string, KillFrame> kframes;
         };
     }
 }

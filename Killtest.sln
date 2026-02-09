@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 18
 VisualStudioVersion = 18.1.11312.151 d18.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Killengine", "..\killtest\Killengine.vcxproj", "{A85A02E3-A5A7-25F5-555D-0B073244BE4A}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Killengine", "Killengine.vcxproj", "{A85A02E3-A5A7-25F5-555D-0B073244BE4A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,6 +26,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {D554FA15-FE55-4A18-BFCC-5E42F430F5BA}
+		SolutionGuid = {9481734B-B698-405C-A7CA-4B46C92581D1}
 	EndGlobalSection
 EndGlobal
