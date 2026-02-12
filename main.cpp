@@ -7,9 +7,9 @@
 int main() {
 	std::cout << "KILL DEBUG\n";
 	auto& render = KE::Core::Render::get();
-	//код инициализации
+	//initialisation
 	render.renderMain("game", [&]() {
-		//код выполняемый каждый кадр
+		//loop
 	});
 	
 }
