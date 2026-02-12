@@ -34,8 +34,9 @@ void KE::Core::Render::loadTexturePack(TexturePack& pack) {
     for (auto& name : pack.getList())
     {
         sf::Texture* tex = pack.get(name);
-        if(!tex) continue;
+        if (!tex) continue;
         sf::Sprite spr(*tex);
+        spr.setScale({ 0.2, 0.2 });
         loaded.push_back(spr);
     }
     
@@ -65,4 +66,17 @@ void KE::Core::Render::setSpritePos(unsigned int spri, float x, float y) {
     if (spri >= 0 && spri < (int)loaded.size()) {
         loaded[spri].setPosition(x, y);
     }
+}
+
+sf::FloatRect KE::Core::Render::getBounds(unsigned int spri) const {
+    if (spri < loaded.size()) {
+        return loaded[spri].getGlobalBounds();
+    }
+    auto real = loaded[spri].getGlobalBounds();
+    return sf::FloatRect(
+        real.left + (real.width - 32.0f) / 2.0f,
+        real.top + (real.height - 32.0f) / 2.0f,
+        32.0f,
+        32.0f
+    );
 }

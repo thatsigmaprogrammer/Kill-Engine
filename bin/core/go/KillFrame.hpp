@@ -12,6 +12,7 @@ public:
     ~KillFrame() = default;
     void setPosition(Vec2 vector);
     void setPosition(float x, float y);
+    bool checkCollistion(const KillFrame& other) const;
     void setSpri(unsigned int spria) { spri = spria; }
 private:
     unsigned int spri;

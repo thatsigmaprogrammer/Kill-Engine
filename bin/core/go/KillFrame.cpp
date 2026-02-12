@@ -12,3 +12,10 @@ void KillFrame::setPosition(Vec2 vector) {
 	KE::Core::Render::get().setSpritePos(spri, vector.X, vector.Y);
 	transform.position = vector;
 }
+
+bool KillFrame::checkCollistion(const KillFrame& other) const {
+	sf::FloatRect me = KE::Core::Render::get().getBounds(spri);
+	sf::FloatRect otherR = KE::Core::Render::get().getBounds(other.spri);
+
+	return me.intersects(otherR);
+}

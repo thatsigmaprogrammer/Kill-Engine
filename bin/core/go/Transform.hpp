@@ -1,5 +1,7 @@
 #include <SFML/Graphics.hpp>
 
+#pragma once
+
 struct Vec2 {
     float X, Y;
     Vec2(float x, float y) { X = x; Y = y; }

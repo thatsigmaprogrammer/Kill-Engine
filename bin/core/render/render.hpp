@@ -12,12 +12,15 @@ namespace KE {
     namespace Core {
         class Render
         {
+        private:
+            sf::Context context;
         public:
 
             sf::RenderWindow window;
             std::map<std::string, KillFrame> kframes;
 
             int renderMain(const std::string& gamename, std::function<void()> usercode);
+            sf::FloatRect getBounds(unsigned int spri) const;
             void loadTexturePack(TexturePack& pack);
             std::vector<sf::Sprite> getSprites();
             static Render& get() { static Render ins; return ins; }
